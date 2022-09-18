@@ -41,13 +41,15 @@ client.on("message", async (message) => {
 
   for (let contact of mentions) {
     console.log(`${contact.pushname} was mentioned`);
-    message.reply(`
+    if (contact.number === "62859106838223") {
+      message.reply(`
       Halo, berikut perintah yang tersedia
-      🟢 @erieri ▶️ open command list
-      🟢 hello, hi, halo ▶️ salam
-      🟢 selamat pagi, morning ▶️ salam pagi
-      🟢 minta list ulang tahun ▶️ list ulang tahun
-    `);
+      · @erieri = open command list
+      · hello, hi, halo = salam
+      · selamat pagi, good morning = salam pagi
+      · minta list ulang tahun = list ulang tahun
+      `);
+    }
   }
 });
 
