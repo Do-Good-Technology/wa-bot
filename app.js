@@ -34,10 +34,34 @@ client.on("ready", () => {
   }
 });
 
-client.on("message", (message) => {
-  if (message.body === "hello") {
-    console.log("send message", message.body);
-    message.reply("Hiiiii");
+client.on("message", async (message) => {
+  const mentions = await message.getMentions();
+
+  console.log("mentions", mentions);
+
+  for (let contact of mentions) {
+    console.log(`${contact.pushname} was mentioned`);
+    message.reply(`
+      Halo, berikut perintah yang tersedia
+      🟢 @erieri ▶️ open command list
+      🟢 hello, hi, halo ▶️ salam
+      🟢 selamat pagi, morning ▶️ salam pagi
+      🟢 minta list ulang tahun ▶️ list ulang tahun
+    `);
+  }
+});
+
+client.on("message", (m) => {
+  const message = m.body;
+  const lowerCaseMessage = message.toLowerCase();
+
+  if (
+    lowerCaseMessage === "hello" ||
+    lowerCaseMessage === "hi" ||
+    lowerCaseMessage === "halo"
+  ) {
+    console.log("send message", lowerCaseMessage);
+    m.reply("Hiiiii");
   }
 });
 
