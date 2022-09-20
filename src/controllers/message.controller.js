@@ -32,8 +32,8 @@ const messageController = async (client, message) => {
     let randomNum = 0;
 
     const num = Math.random();
-    if (num < 0.4) randomNum = 0;
-    else if (num < 0.7) randomNum = 1;
+    if (num < 0.3) randomNum = 0;
+    else if (num < 0.3) randomNum = 1;
     else randomNum = Math.floor(Math.random() * 11);
 
     console.log("send message ", greetings[randomNum]);
