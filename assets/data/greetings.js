@@ -1,4 +1,4 @@
-module.exports = [
+const greetings = [
   "Selamat pagi juga 🇮🇩 😁🙌",
   "Morning 🇬🇧 😁🙌",
   "おはようございます (Ohayōgozaimasu) 🎌 😁🙌",
@@ -10,3 +10,5 @@ module.exports = [
   "Доброе утро (dobroye utro) 🇷🇺 😁🙌",
   "Buenos dias 🇪🇸 😁🙌",
 ];
+
+module.exports = greetings;

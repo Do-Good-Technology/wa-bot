@@ -1,5 +1,6 @@
 const commandList = require("../../assets/data/commandList.js");
 const mbhBirthdayList = require("../../assets/data/mbhBirthdayList.js");
+const greetings = require("../../assets/data/greetings.js");
 
 const messageController = async (client, message) => {
   const mentions = await message.getMentions();
