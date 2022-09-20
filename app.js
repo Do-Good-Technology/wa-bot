@@ -1,11 +1,9 @@
-const qrcode = require("qrcode-terminal");
-const moment = require("moment");
-const greetings = require("./assets/data/greetings");
+const qrcode = require('qrcode-terminal');
 
-const { Client, LocalAuth } = require("whatsapp-web.js");
+const { Client, LocalAuth } = require('whatsapp-web.js');
 
 const client = new Client({
-  authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth(),
 });
 
 // const { Client } = require("whatsapp-web.js");
@@ -13,12 +11,12 @@ const client = new Client({
 
 client.initialize();
 
-client.on("qr", (qr) => {
-  qrcode.generate(qr, { small: true });
+client.on('qr', (qr) => {
+    qrcode.generate(qr, { small: true });
 });
 
-const readyController = require("./src/controllers/ready.controller.js");
-client.on("ready", () => readyController(client));
+const readyController = require('./src/controllers/ready.controller.js');
+client.on('ready', () => readyController(client));
 
-const messageController = require("./src/controllers/message.controller.js");
-client.on("message", (message) => messageController(client, message));
+const messageController = require('./src/controllers/message.controller.js');
+client.on('message', (message) => messageController(client, message));
