@@ -8,6 +8,7 @@ const readyController = (client) => {
     const text = `Hi Sir, I am back !!!! on ${timeNow}`;
     // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
     const chatId = number.substring(1) + '@c.us';
+    console.log('chatId', chatId);
     client.sendMessage(chatId, text);
 
     const minutesNow = moment().format('h:mm a');
