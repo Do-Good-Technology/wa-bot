@@ -4,7 +4,7 @@ const greetings = require('../../assets/data/greetings.js');
 
 const messageController = async (client, message) => {
     console.log('message', message);
-    console.log('client', client);
+    // console.log('client', client);
 
     const mentions = await message.getMentions();
     for (let contact of mentions) {
