@@ -1,15 +1,18 @@
 const moment = require('moment');
+const chatIdOf = require('../helper/chatIdOf.js');
+const { scheduleControllerPer1, scheduleControllerPer60 } = require('./schedule.controller.js');
 
 const readyController = (client) => {
     const timeNow = moment().format('MMMM Do YYYY, HH:mm:ss');
     console.log('Client is ready!', timeNow);
 
-    const number = '+6287738210702';
     const text = `Hi Sir, I am back !!!! on ${timeNow}`;
-    // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
-    const chatId = number.substring(1) + '@c.us';
-    console.log('chatId', chatId);
-    client.sendMessage(chatId, text);
+    console.log('send :', text);
+    client.sendMessage(chatIdOf('+6287738210702'), text);
+
+    setInterval(() => scheduleControllerPer1(client), 1000 * 60);
+
+    setInterval(() => scheduleControllerPer60(client), 1000 * 60 * 60);
 };
 
 module.exports = readyController;
