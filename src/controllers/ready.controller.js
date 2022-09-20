@@ -10,12 +10,6 @@ const readyController = (client) => {
     const chatId = number.substring(1) + '@c.us';
     console.log('chatId', chatId);
     client.sendMessage(chatId, text);
-
-    const minutesNow = moment().format('h:mm a');
-    if (minutesNow === '2:21 pm') {
-        console.log('masuk if');
-        client.sendMessage(chatId, text);
-    }
 };
 
 module.exports = readyController;

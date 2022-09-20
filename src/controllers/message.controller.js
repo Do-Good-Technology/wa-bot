@@ -3,10 +3,10 @@ const mbhBirthdayList = require('../../assets/data/mbhBirthdayList.js');
 const greetings = require('../../assets/data/greetings.js');
 
 const messageController = async (client, message) => {
-    console.log('message', message);
+    // console.log('message', message);
     // console.log('client', client);
-    const chats = await client.getChats()
-    console.log('chats', chats);
+    // const chats = await client.getChats()
+    // console.log('chats', chats);
 
     const mentions = await message.getMentions();
     for (let contact of mentions) {
