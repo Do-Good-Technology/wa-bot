@@ -15,7 +15,7 @@ const scheduleControllerPer1 = () => {
     // const nowMinute = moment().format('mm');
     // const nowSecond = moment().format('ss');
 
-    console.log('moment', now);
+    console.log('log at : ', now);
 };
 
 module.exports = { scheduleControllerPer1, scheduleControllerPer60 };
