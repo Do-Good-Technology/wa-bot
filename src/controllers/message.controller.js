@@ -2,7 +2,7 @@ const commandList = require('../../assets/data/commandList.js');
 const mbhBirthdayList = require('../../assets/data/mbhBirthdayList.js');
 const greetings = require('../../assets/data/greetings.js');
 
-const messageController = async (client, message) => {
+const messageController = async (client, message, storage) => {
     // console.log('message', message);
     // console.log('client', client);
     // const chats = await client.getChats()
@@ -20,8 +20,11 @@ const messageController = async (client, message) => {
 
     //   * Hi
     if (lowerCaseMessage === 'hello' || lowerCaseMessage === 'hi' || lowerCaseMessage === 'halo') {
-        console.log('send message', lowerCaseMessage);
-        message.reply('Hiiiii');
+        console.log('send message', lowerCaseMessage, 'storage', 'storage?.state?.count', storage?.state?.count);
+        message.reply(`Hiiiii storage.state ${storage?.state?.count} `);
+        storage.setState({
+            count: storage.state.count + 1,
+        });
     }
 
     //  * Good Morning
