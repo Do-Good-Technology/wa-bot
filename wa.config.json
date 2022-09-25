@@ -1,0 +1,24 @@
+{
+    "autosend": [
+        {
+            "time": "08:00-09:00",
+            "message": "Good morning",
+            "no": "1234567890"
+        },
+        {
+            "tiem": "12:00-13:00",
+            "message": "Good afternoon",
+            "no": "1234567890"
+        }
+    ],
+    "reply": [
+        {
+            "message": "Hello",
+            "no": "1234567890"
+        },
+        {
+            "message": "Hi",
+            "no": "1234567890"
+        }
+    ]
+}

@@ -10,7 +10,9 @@ const readyController = (client) => {
     console.log('send :', text);
     client.sendMessage(chatIdOf('+6287738210702'), text);
 
-    setInterval(() => scheduleControllerPer1(client), 1000 * 60);
+    let alreadySent = false;
+
+    setInterval(() => scheduleControllerPer1(client, alreadySent), 1000 * 60);
 
     setInterval(() => scheduleControllerPer60(client), 1000 * 60 * 60);
 };
